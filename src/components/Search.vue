@@ -5,7 +5,8 @@
       v-model="title"
       type="text"
       placeholder="Search for Movies, Series & more"
-      class="form-control" />
+      class="form-control"
+      @keyup.enter="apply" />
     <!-- Filters -->
     <div class="selects">
       <select
@@ -20,18 +21,24 @@
         </option>
         <option
           v-for="item in filter.items"
-          :key="item"
-          :value="item">
+          :key="item">
           {{ item }}
         </option>
       </select>
     </div>
     <!-- //Filters -->
+    <button
+      class="btn btn-primary"
+      @click="apply">
+      Apply
+    </button>
   </div>
   <!-- //Search -->
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -63,12 +70,19 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    async apply() {
+      const OMDB_API_KEY = '6a8bb20a';
+      const response = await axios.get(`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${this.title}&type=${this.type}&y=${this.year}&page=1`);
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 $spacing: 10px;
+$search-width: 120px;
 
 .container {
   display: flex;
@@ -86,13 +100,20 @@ $spacing: 10px;
     display: flex;
 
     select {
-      width: 120px;
+      width: $search-width;
       margin-right: $spacing;
 
       &:last-child {
         margin-right: 0;
       }
     }
+  }
+
+  .btn {
+    flex-shrink: 0;
+    width: $search-width;
+    height: 50px;
+    font-weight: 700;
   }
 }
 </style>

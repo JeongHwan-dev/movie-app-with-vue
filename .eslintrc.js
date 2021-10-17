@@ -31,5 +31,6 @@ module.exports = {
       multiline: 'never'
     }],
     'semi': [2, 'always'],
+    'no-unused-vars': 1
   }
 };

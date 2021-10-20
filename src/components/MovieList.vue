@@ -33,7 +33,17 @@ export default {
 </script>
 
 <style lang="scss" container>
+@import "~/scss/main";
+
 .container  {
+  margin-top: 30px;
+  
+  .inner {
+    padding: 10px 0;
+    border-radius: 4px;
+    background-color: $gray-200;
+  }
+
   .movies {
     display: flex;
     flex-wrap: wrap;

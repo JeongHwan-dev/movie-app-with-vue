@@ -31,5 +31,7 @@ module.exports = {
       multiline: 'never'
     }],
     'semi': [2, 'always'],
+    'no-unused-vars': 1,
+    'quotes': [1, 'single']
   }
 };

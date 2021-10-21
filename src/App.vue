@@ -1,15 +1,21 @@
 <template>
-  <!-- Remove & use example component! -->
-  <Nav />
+  <Header />
   <RouterView />
+  <Footer />
 </template>
 
 <script>
-import Nav from '~/components/Nav';
+import Header from '~/components/Header';
+import Footer from '~/components/Footer';
 
 export default {
   components: {
-    Nav
+    Header,
+    Footer
   }
 };
 </script>
+
+<style lang="scss">
+@import "~/scss/main";  
+</style>

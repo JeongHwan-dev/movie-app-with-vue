@@ -1,14 +1,19 @@
 <template>
-  <h1>Home!</h1>
-  <HelloWorld />
+  <HeadLine />
+  <Search />
+  <MovieList />
 </template>
 
 <script>
-import HelloWorld from '~/components/HelloWorld'
+import HeadLine from '~/components/HeadLine';
+import Search from '~/components/Search';
+import MovieList from '~/components/MovieList';
 
 export default {
   components: {
-    HelloWorld
+    HeadLine,
+    Search,
+    MovieList
   }
-}
+};
 </script>

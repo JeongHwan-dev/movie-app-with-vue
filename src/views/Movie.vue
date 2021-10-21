@@ -11,14 +11,21 @@
         <div class="skeleton etc"></div>
       </div>  
     </div>
+    <Loader
+      :size="3"
+      :z-index="10"
+      fixed />
   </div>
 </template>
 
 <script>
-export default {
-  created() {
-    console.log(this.$route);
+import Loader from '~/components/Loader';
 
+export default {
+  components: {
+    Loader
+  },
+  created() {
     this.$store.dispatch('movie/searchMovieWithId', {
       id: this.$route.params.id
     });

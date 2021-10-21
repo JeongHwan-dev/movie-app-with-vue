@@ -1,4 +1,5 @@
 <template>
+  <!-- Headline -->
   <div class="container">
     <h1>
       <span>OMDb API</span><br />
@@ -10,6 +11,7 @@
       If you find this service useful, please consider making a one-time donation or become a patron.
     </p>
   </div>
+  <!-- //Headline -->
 </template>
 
 <style lang="scss" scoped>

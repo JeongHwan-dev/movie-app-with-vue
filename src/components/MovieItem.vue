@@ -55,8 +55,8 @@ $width: 200px;
     .title {
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
       color: $white;
+      text-overflow: ellipsis;
     }
   }
 

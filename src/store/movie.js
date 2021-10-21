@@ -21,8 +21,13 @@ export default {
   },
   actions: {
     async searchMovies({ state, commit }, payload) {
+      if (state.loading) {
+        return;
+      }
+
       commit('updateState', {
-        message: ''
+        message: '',
+        loading: true
       });
       
       try {
@@ -63,6 +68,10 @@ export default {
         commit('updateState', {
           movies: [],
           message
+        });
+      } finally {
+        commit('updateState', {
+          loading: false
         });
       }
     }

@@ -12,7 +12,7 @@ export default createRouter({
       component: Home
     },
     {
-      path: '/moive',
+      path: '/moive/:id',
       component: Movie
     },
     {

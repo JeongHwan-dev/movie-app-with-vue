@@ -65,7 +65,6 @@ export default {
     font-size: 20px;
     color: $gray-400;
   }
-
   .movie-list__movies {
     display: flex;
     flex-wrap: wrap;

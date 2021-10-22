@@ -1,6 +1,8 @@
 <template>
+  <!-- Movie -->
   <div class="container">
     <template v-if="loading">
+      <!-- Skeletons UI -->
       <div class="skeletons">
         <div class="skeleton skeletons__poster"></div>
         <div class="skeletons__specs">
@@ -16,13 +18,18 @@
         :size="3"
         :z-index="10"
         fixed />
+    <!-- //Skeletons UI -->
     </template>
+    <!-- Movie Info -->
     <div
       v-else
       class="movie-info">
+      <!-- Movie Info - Poster -->
       <div
         :style="{ backgroundImage: `url(${requestDiffSizeImage(movieData.Poster)})` }"
         class="movie-info__poster"></div>
+      <!-- //Movie Info - Poster -->
+      <!-- Movie Info - Specs -->
       <div class="movie-info__specs">
         <div class="movie-info__title">
           {{ movieData.Title }}
@@ -68,8 +75,11 @@
           <span>{{ movieData.Genre }}</span>
         </div>
       </div>
+      <!-- //Movie Info - Specs -->
     </div>
+    <!-- //Movie Info -->
   </div>
+  <!-- //Movie -->
 </template>
 
 <script>

@@ -1,17 +1,17 @@
 <template>
-  <div class="container">
+  <div class="container movie-list">
     <div
       :class="{ 'no-result': !movies.length }"
-      class="inner">
+      class="movie-list__inner">
       <Loader v-if="loading" />
       <div
         v-if="message"
-        class="message">
+        class="movie-list__message">
         {{ message }}
       </div>
       <div
         v-else
-        class="movies">
+        class="movie-list__movies">
         <MovieItem
           v-for="movie in movies"
           :key="movie.imdbID"
@@ -47,10 +47,10 @@ export default {
 <style lang="scss" container>
 @import "~/scss/main";
 
-.container  {
+.movie-list  {
   margin-top: 30px;
   
-  .inner {
+  .movie-list__inner {
     padding: 10px 0;
     border-radius: 4px;
     background-color: $gray-200;
@@ -61,12 +61,12 @@ export default {
     }
   }
 
-  .message {
+  .movie-list__message {
     font-size: 20px;
     color: $gray-400;
   }
 
-  .movies {
+  .movie-list__movies {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

@@ -1,6 +1,6 @@
 <template>
   <!-- Search -->
-  <div class="container">
+  <div class="container search">
     <input
       v-model="title"
       type="text"
@@ -8,7 +8,7 @@
       class="form-control"
       @keyup.enter="apply" />
     <!-- Filters -->
-    <div class="selects">
+    <div class="search__selects">
       <select
         v-for="filter in filters"
         v-model="$data[filter.name]"
@@ -28,7 +28,7 @@
     </div>
     <!-- //Filters -->
     <button
-      class="btn btn-primary"
+      class="btn btn-primary search__btn"
       @click="apply">
       Apply
     </button>
@@ -86,7 +86,7 @@ export default {
 $spacing: 10px;
 $search-width: 120px;
 
-.container {
+.search {
   display: flex;
 
   > * {
@@ -98,7 +98,7 @@ $search-width: 120px;
     }
   }
 
-  .selects {
+  .search__selects {
     display: flex;
 
     select {
@@ -111,7 +111,7 @@ $search-width: 120px;
     }
   }
 
-  .btn {
+  .search__btn {
     flex-shrink: 0;
     width: $search-width;
     height: 50px;

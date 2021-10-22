@@ -2,11 +2,11 @@
   <div
     :style="{backgroundImage: `url(${movie.Poster})`}"
     class="movie">
-    <div class="info">
-      <div class="year">
+    <div class="movie__info">
+      <div class="movie__year">
         {{ movie.Year }}
       </div>
-      <div class="title">
+      <div class="movie__title">
         {{ movie.Title }}
       </div>
     </div>
@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/scss/main";
+
 $width: 200px;
 
 .movie {
@@ -38,7 +39,7 @@ $width: 200px;
   background-size: cover;
   background-color: $gray-400;
 
-  .info {
+  .movie__info {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -49,10 +50,10 @@ $width: 200px;
     font-size: 14px;
     text-align: center;
     
-    .year {
+    .movie__year {
       color: $primary;
     }
-    .title {
+    .movie__title {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

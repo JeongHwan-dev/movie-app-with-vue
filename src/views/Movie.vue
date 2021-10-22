@@ -4,12 +4,12 @@
       <div class="skeletons">
         <div class="skeleton skeletons__poster"></div>
         <div class="skeletons__specs">
-          <div class="skeleton specs__title"></div>
-          <div class="skeleton specs__spec"></div>
-          <div class="skeleton specs__plot"></div>
-          <div class="skeleton specs__etc"></div>
-          <div class="skeleton specs__etc"></div>
-          <div class="skeleton specs__etc"></div>
+          <div class="skeleton skeletons__title"></div>
+          <div class="skeleton skeletons__spec"></div>
+          <div class="skeleton skeletons__plot"></div>
+          <div class="skeleton skeletons__etc"></div>
+          <div class="skeleton skeletons__etc"></div>
+          <div class="skeleton skeletons__etc"></div>
         </div>  
       </div>
       <Loader
@@ -24,18 +24,18 @@
         :style="{ backgroundImage: `url(${movieData.Poster})`}"
         class="movie-info__poster"></div>
       <div class="movie-info__specs">
-        <div class="specs__title">
+        <div class="movie-info__title">
           {{ movieData.Title }}
         </div>
-        <div class="specs__labels">
+        <div class="movie-info__labels">
           <span>{{ movieData.Released }}</span>
           <span>{{ movieData.Runtime }}</span>
           <span>{{ movieData.Country }}</span>
         </div>
-        <div class="specs__plot">
+        <div class="movie-info__plot">
           {{ movieData.Plot }}
         </div>
-        <div class="specs__ratings">
+        <div class="movie-info__ratings">
           <h3>Ratings</h3>
           <div class="ratings__wrap">
             <div
@@ -51,19 +51,19 @@
             </div>
           </div>
         </div>
-        <div class="specs__actors">
+        <div class="movie-info__actors">
           <h3>Actors</h3>
           <span>{{ movieData.Actors }}</span>
         </div>
-        <div class="specs__director">
+        <div class="movie-info__director">
           <h3>Director</h3>
           <span>{{ movieData.Director }}</span>
         </div>
-        <div class="specs__production">
+        <div class="movie-info__production">
           <h3>Production</h3>
           <span>{{ movieData.Production }}</span>
         </div>
-        <div class="specs__genre">
+        <div class="movie-info__genre">
           <h3>Genre</h3>
           <span>{{ movieData.Genre }}</span>
         </div>
@@ -124,21 +124,21 @@ $border-radius: 10px;
     border-radius: $border-radius;
     background-color: $gray-200;
     
-    &.specs__title {
+    &.skeletons__title {
       width: 80%;
       height: 70px;
     }
-    &.specs__spec {
+    &.skeletons__spec {
       width: 60%;
       height: 30px;
       margin-top: $info-margin-top;
     }
-    &.specs__plot {
+    &.skeletons__plot {
       width: 100%;
       height: 250px;
       margin-top: $info-margin-top;
     }
-    &.specs__etc {
+    &.skeletons__etc {
       width: 50%;
       height: 50px;
       margin-top: $info-margin-top;
@@ -170,14 +170,14 @@ $border-radius: 10px;
       font-size: 20px;
     }
 
-    .specs__title {
+    .movie-info__title {
       margin-bottom: 30px;
       font-family: "Oswald", sans-serif;
       font-size: 70px;
       line-height: 1;
       color: $black;
     }
-    .specs__labels {
+    .movie-info__labels {
       color: $primary;
       
       span {
@@ -190,10 +190,10 @@ $border-radius: 10px;
         }
       }
     }
-    .specs__plot {
+    .movie-info__plot {
       margin-top: $info-margin-top;
     }
-    .specs__ratings {
+    .movie-info__ratings {
       .ratings__wrap {
         display: flex;
 

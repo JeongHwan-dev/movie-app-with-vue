@@ -1,4 +1,5 @@
 <template>
+  <!-- Movie Item -->
   <div
     :style="{ backgroundImage: `url(${movie.Poster})` }"
     class="movie-item">
@@ -6,6 +7,7 @@
       v-if="imageLoading"
       :size="1.5"
       absolute />
+    <!-- Movie Item Info -->
     <div class="movie-item__info">
       <div class="movie-item__year">
         {{ movie.Year }}
@@ -14,7 +16,9 @@
         {{ movie.Title }}
       </div>
     </div>
+    <!-- //Movie Item Info -->
   </div>
+  <!-- //Movie Item -->
 </template>
 
 <script>

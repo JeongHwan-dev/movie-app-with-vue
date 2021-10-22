@@ -1,3 +1,220 @@
 <template>
-  <h1>Movie!</h1>
+  <div class="container">
+    <template v-if="loading">
+      <div class="skeletons">
+        <div class="skeleton skeletons__poster"></div>
+        <div class="skeletons__specs">
+          <div class="skeleton skeletons__title"></div>
+          <div class="skeleton skeletons__spec"></div>
+          <div class="skeleton skeletons__plot"></div>
+          <div class="skeleton skeletons__etc"></div>
+          <div class="skeleton skeletons__etc"></div>
+          <div class="skeleton skeletons__etc"></div>
+        </div>  
+      </div>
+      <Loader
+        :size="3"
+        :z-index="10"
+        fixed />
+    </template>
+    <div
+      v-else
+      class="movie-info">
+      <div
+        :style="{ backgroundImage: `url(${requestDiffSizeImage(movieData.Poster)})` }"
+        class="movie-info__poster"></div>
+      <div class="movie-info__specs">
+        <div class="movie-info__title">
+          {{ movieData.Title }}
+        </div>
+        <div class="movie-info__labels">
+          <span>{{ movieData.Released }}</span>
+          <span>{{ movieData.Runtime }}</span>
+          <span>{{ movieData.Country }}</span>
+        </div>
+        <div class="movie-info__plot">
+          {{ movieData.Plot }}
+        </div>
+        <div class="movie-info__ratings">
+          <h3>Ratings</h3>
+          <div class="ratings__wrap">
+            <div
+              v-for="{ Source: name, Value: score } in movieData.Ratings"
+              :key="name"
+              :title="name"
+              class="rating">
+              <img
+                :src="`/static/images/${name}.png`"
+                :alt="name"
+                class="rating__logo" />
+              <span class="rating__score">{{ score }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="movie-info__actors">
+          <h3>Actors</h3>
+          <span>{{ movieData.Actors }}</span>
+        </div>
+        <div class="movie-info__director">
+          <h3>Director</h3>
+          <span>{{ movieData.Director }}</span>
+        </div>
+        <div class="movie-info__production">
+          <h3>Production</h3>
+          <span>{{ movieData.Production }}</span>
+        </div>
+        <div class="movie-info__genre">
+          <h3>Genre</h3>
+          <span>{{ movieData.Genre }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+import Loader from '~/components/Loader';
+
+export default {
+  components: {
+    Loader
+  },
+  computed: {
+    movieData() {
+      return this.$store.state.movie.movieData;
+    },
+    loading() {
+      return this.$store.state.movie.loading;
+    }
+  },
+  created() {
+    this.$store.dispatch('movie/searchMovieWithId', {
+      id: this.$route.params.id
+    });
+  },
+  methods: {
+    requestDiffSizeImage(url, size = 700) {
+      return url.replace('SX300', `SX${size}`);
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+@import "~/scss/main";
+
+$poster-width: 500px;
+$poster-margin-right: 70px;
+$info-margin-top: 20px;
+$border-radius: 10px;
+
+.container {
+  padding-top: 40px;
+}
+
+.skeletons {
+  display: flex;
+
+  .skeletons__poster {
+    flex-shrink: 0;
+    width: $poster-width;
+    height: $poster-width * 3 / 2;
+    margin-right: $poster-margin-right;
+  }
+  .skeletons__specs {
+    flex-grow: 1;
+  }
+
+  .skeleton {
+    border-radius: $border-radius;
+    background-color: $gray-200;
+    
+    &.skeletons__title {
+      width: 80%;
+      height: 70px;
+    }
+    &.skeletons__spec {
+      width: 60%;
+      height: 30px;
+      margin-top: $info-margin-top;
+    }
+    &.skeletons__plot {
+      width: 100%;
+      height: 250px;
+      margin-top: $info-margin-top;
+    }
+    &.skeletons__etc {
+      width: 50%;
+      height: 50px;
+      margin-top: $info-margin-top;
+    }
+  }
+}
+
+.movie-info {
+  display: flex;
+  color: $gray-600;
+
+  .movie-info__poster {
+    flex-shrink: 0;
+    width: $poster-width;
+    height: $poster-width * 3 / 2;
+    margin-right: $poster-margin-right;
+    border-radius: $border-radius;
+    background-position: center;
+    background-size: cover;
+    background-color: $gray-200;
+  }
+  .movie-info__specs {
+    flex-grow: 1;
+
+    h3 {
+      margin: 24px 0 6px;
+      color: $black;
+      font-family: "Oswald", sans-serif;
+      font-size: 20px;
+    }
+
+    .movie-info__title {
+      margin-bottom: 30px;
+      font-family: "Oswald", sans-serif;
+      font-size: 70px;
+      line-height: 1;
+      color: $black;
+    }
+    .movie-info__labels {
+      color: $primary;
+      
+      span {
+        &::after {
+          content: "\00b7";
+          margin: 0 6px;
+        }
+        &:last-child::after {
+          display: none;
+        }
+      }
+    }
+    .movie-info__plot {
+      margin-top: $info-margin-top;
+    }
+    .movie-info__ratings {
+      .ratings__wrap {
+        display: flex;
+
+        .rating {
+          display: flex;
+          align-items: center;
+          margin-right: 32px;
+
+          img {
+            flex-shrink: 0;
+            height: 30px;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

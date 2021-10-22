@@ -15,12 +15,12 @@
     font-size: 20px;
     text-decoration: none; 
 
-    &:hover {
-      color: $black;
-    }
-    
     span {
       color: $primary;
+    }
+
+    &:hover {
+      color: $black;
     }
   }
 </style>

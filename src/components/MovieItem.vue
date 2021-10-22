@@ -1,16 +1,16 @@
 <template>
   <div
     :style="{ backgroundImage: `url(${movie.Poster})` }"
-    class="movie">
+    class="movie-item">
     <Loader
       v-if="imageLoading"
       :size="1.5"
       absolute />
-    <div class="movie__info">
-      <div class="movie__year">
+    <div class="movie-item__info">
+      <div class="movie-item__year">
         {{ movie.Year }}
       </div>
-      <div class="movie__title">
+      <div class="movie-item__title">
         {{ movie.Title }}
       </div>
     </div>
@@ -58,7 +58,7 @@ export default {
 
 $width: 200px;
 
-.movie {
+.movie-item {
   overflow: hidden;
   position: relative;
   width: $width;
@@ -68,7 +68,7 @@ $width: 200px;
   background-size: cover;
   background-color: $gray-400;
 
-  .movie__info {
+  .movie-item__info {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -79,10 +79,10 @@ $width: 200px;
     font-size: 14px;
     text-align: center;
     
-    .movie__year {
+    .movie-item__year {
       color: $primary;
     }
-    .movie__title {
+    .movie-item__title {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

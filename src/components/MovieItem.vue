@@ -1,24 +1,57 @@
 <template>
+  <!-- Movie Item -->
   <div
-    :style="{backgroundImage: `url(${movie.Poster})`}"
-    class="movie">
-    <div class="movie__info">
-      <div class="movie__year">
+    :style="{ backgroundImage: `url(${movie.Poster})` }"
+    class="movie-item">
+    <Loader
+      v-if="imageLoading"
+      :size="1.5"
+      absolute />
+    <!-- Movie Item Info -->
+    <div class="movie-item__info">
+      <div class="movie-item__year">
         {{ movie.Year }}
       </div>
-      <div class="movie__title">
+      <div class="movie-item__title">
         {{ movie.Title }}
       </div>
     </div>
+    <!-- //Movie Item Info -->
   </div>
+  <!-- //Movie Item -->
 </template>
 
 <script>
+import Loader from '~/components/Loader';
+
 export default {
+  components: {
+    Loader
+  },
   props: {
     movie: {
       type: Object,
       default: () => ({})
+    }
+  },
+  data() {
+    return {
+      imageLoading: true
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    async init() {
+      const poster = this.movie.Poster;
+
+      if (!poster|| poster === 'N/A') {
+        this.imageLoading = false;
+      } else {
+        await this.$loadImage(poster);
+        this.imageLoading = false;
+      }
     }
   }
 };
@@ -29,7 +62,7 @@ export default {
 
 $width: 200px;
 
-.movie {
+.movie-item {
   overflow: hidden;
   position: relative;
   width: $width;
@@ -39,7 +72,7 @@ $width: 200px;
   background-size: cover;
   background-color: $gray-400;
 
-  .movie__info {
+  .movie-item__info {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -50,10 +83,10 @@ $width: 200px;
     font-size: 14px;
     text-align: center;
     
-    .movie__year {
+    .movie-item__year {
       color: $primary;
     }
-    .movie__title {
+    .movie-item__title {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

@@ -1,6 +1,8 @@
 <template>
+  <!-- Movie -->
   <div class="container">
     <template v-if="loading">
+      <!-- Skeletons UI -->
       <div class="skeletons">
         <div class="skeleton skeletons__poster"></div>
         <div class="skeletons__specs">
@@ -16,13 +18,22 @@
         :size="3"
         :z-index="10"
         fixed />
+    <!-- //Skeletons UI -->
     </template>
+    <!-- Movie Info -->
     <div
       v-else
       class="movie-info">
+      <!-- Movie Info - Poster -->
       <div
         :style="{ backgroundImage: `url(${requestDiffSizeImage(movieData.Poster)})` }"
-        class="movie-info__poster"></div>
+        class="movie-info__poster">
+        <Loader
+          v-if="imageLoading"
+          absolute />
+      </div>
+      <!-- //Movie Info - Poster -->
+      <!-- Movie Info - Specs -->
       <div class="movie-info__specs">
         <div class="movie-info__title">
           {{ movieData.Title }}
@@ -68,8 +79,11 @@
           <span>{{ movieData.Genre }}</span>
         </div>
       </div>
+      <!-- //Movie Info - Specs -->
     </div>
+    <!-- //Movie Info -->
   </div>
+  <!-- //Movie -->
 </template>
 
 <script>
@@ -78,6 +92,11 @@ import Loader from '~/components/Loader';
 export default {
   components: {
     Loader
+  },
+  data() {
+    return {
+      imageLoading: true
+    };
   },
   computed: {
     movieData() {
@@ -94,7 +113,19 @@ export default {
   },
   methods: {
     requestDiffSizeImage(url, size = 700) {
-      return url.replace('SX300', `SX${size}`);
+      if (!url || url === 'N/A') {
+        this.imageLoading = false;
+        return '';
+      }
+
+      const src = url.replace('SX300', `SX${size}`);
+
+      this.$loadImage(src)
+        .then(() => {
+          this.imageLoading = false;
+        });
+
+      return src;
     }
   }
 };
@@ -157,6 +188,7 @@ $border-radius: 10px;
 
   .movie-info__poster {
     flex-shrink: 0;
+    position: relative;
     width: $poster-width;
     height: $poster-width * 3 / 2;
     margin-right: $poster-margin-right;

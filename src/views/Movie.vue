@@ -27,7 +27,11 @@
       <!-- Movie Info - Poster -->
       <div
         :style="{ backgroundImage: `url(${requestDiffSizeImage(movieData.Poster)})` }"
-        class="movie-info__poster"></div>
+        class="movie-info__poster">
+        <Loader
+          v-if="imageLoading"
+          absolute />
+      </div>
       <!-- //Movie Info - Poster -->
       <!-- Movie Info - Specs -->
       <div class="movie-info__specs">
@@ -89,6 +93,11 @@ export default {
   components: {
     Loader
   },
+  data() {
+    return {
+      imageLoading: true
+    };
+  },
   computed: {
     movieData() {
       return this.$store.state.movie.movieData;
@@ -104,7 +113,14 @@ export default {
   },
   methods: {
     requestDiffSizeImage(url, size = 700) {
-      return url.replace('SX300', `SX${size}`);
+      const src = url.replace('SX300', `SX${size}`);
+
+      this.$loadImage(src)
+        .then(() => {
+          this.imageLoading = false;
+        });
+
+      return src;
     }
   }
 };
@@ -167,6 +183,7 @@ $border-radius: 10px;
 
   .movie-info__poster {
     flex-shrink: 0;
+    position: relative;
     width: $poster-width;
     height: $poster-width * 3 / 2;
     margin-right: $poster-margin-right;

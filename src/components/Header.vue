@@ -37,11 +37,11 @@ export default {
         }, 
         {
           name: 'Movie',
-          href: '/Moive/tt4520988'
+          href: '/movie/tt1285016'
         }, 
         {
           name: 'About',
-          href: '/About'
+          href: '/about'
         }
       ]
     };

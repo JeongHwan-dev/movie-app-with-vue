@@ -1,6 +1,7 @@
 <template>
   <!-- Movie Item -->
-  <div
+  <RouterLink
+    :to="`/movie/${movie.imdbID}`"
     :style="{ backgroundImage: `url(${movie.Poster})` }"
     class="movie-item">
     <Loader
@@ -17,7 +18,7 @@
       </div>
     </div>
     <!-- //Movie Item Info -->
-  </div>
+  </RouterLink>
   <!-- //Movie Item -->
 </template>
 

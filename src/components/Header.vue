@@ -11,6 +11,7 @@
         <RouterLink
           :to="nav.href"
           active-class="active"
+          :class="{ active: isMatch(nav.path) }"
           class="nav-link">
           {{ nav.name }}
         </RouterLink>
@@ -37,14 +38,20 @@ export default {
         }, 
         {
           name: 'Movie',
-          href: '/Moive/tt4520988'
+          href: '/movie/tt1285016',
+          path: /^\/movie/
         }, 
         {
           name: 'About',
-          href: '/About'
+          href: '/about'
         }
       ]
     };
+  },
+  methods: {
+    isMatch(path) {
+      return !path ? false : path.test(this.$route.fullPath);
+    }
   }
 };
 </script>

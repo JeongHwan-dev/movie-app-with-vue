@@ -132,8 +132,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 $poster-width: 500px;
 $xl-poster-width: 400px;
 $md-poster-width: 320px;

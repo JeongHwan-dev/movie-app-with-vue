@@ -83,8 +83,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 $spacing: 10px;
 $search-width: 120px;
 

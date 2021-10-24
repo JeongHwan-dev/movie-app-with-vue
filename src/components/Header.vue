@@ -91,8 +91,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 .header__inner {
   display: flex;
   align-items: center;

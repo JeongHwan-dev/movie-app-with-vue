@@ -17,27 +17,25 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
+.not-found {
+  padding: 100px 0;
+  font-family: "Oswald", sans-serif;
+  line-height: 1.2;
+  text-align: center;
 
-  .not-found {
-    padding: 100px 0;
-    font-family: "Oswald", sans-serif;
-    line-height: 1.2;
-    text-align: center;
-
-    .not-found__status {
-      font-size: 180px;
-      color: $primary;
-    }
-    .not-found__message {
-      margin-bottom: 50px;
-      font-size: 54px;
-    }
-    .not-found__btn {
-      padding: 10px 30px;
-      font-size: 22px;
-      color: $white;
-      text-decoration: none;
-    }
+  .not-found__status {
+    font-size: 180px;
+    color: $primary;
   }
+  .not-found__message {
+    margin-bottom: 50px;
+    font-size: 54px;
+  }
+  .not-found__btn {
+    padding: 10px 30px;
+    font-size: 22px;
+    color: $white;
+    text-decoration: none;
+  }
+}
 </style>

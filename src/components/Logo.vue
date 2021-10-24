@@ -7,20 +7,18 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
+.logo {
+  color: $black;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  text-decoration: none; 
 
-  .logo {
-    color: $black;
-    font-family: "Oswald", sans-serif;
-    font-size: 20px;
-    text-decoration: none; 
-
-    span {
-      color: $primary;
-    }
-
-    &:hover {
-      color: $black;
-    }
+  span {
+    color: $primary;
   }
+
+  &:hover {
+    color: $black;
+  }
+}
 </style>

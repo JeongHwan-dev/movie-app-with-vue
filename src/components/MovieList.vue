@@ -45,8 +45,6 @@ export default {
 </script>
 
 <style lang="scss" container>
-@import "~/scss/main";
-
 .movie-list  {
   margin-top: 30px;
   

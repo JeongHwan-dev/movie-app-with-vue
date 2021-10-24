@@ -64,8 +64,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 .about {
   padding: 80px 0;
   text-align: center;

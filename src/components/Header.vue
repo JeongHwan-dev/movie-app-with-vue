@@ -1,7 +1,9 @@
 <template>
   <!-- Header -->
   <header>
+    <!-- Logo -->
     <Logo />
+    <!-- //Logo -->
     <!-- Navigation -->
     <div class="nav nav-pills">
       <div
@@ -57,6 +59,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/scss/main";
+
 header {
   display: flex;
   align-items: center;
@@ -65,6 +69,12 @@ header {
 
   .logo {
     margin-right: 40px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .nav {
+      display: none;
+    }
   }
 }
 </style>

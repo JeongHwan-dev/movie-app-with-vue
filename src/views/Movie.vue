@@ -36,7 +36,7 @@
       <!-- Movie Info - Specs -->
       <div class="movie-info__specs">
         <div class="movie-info__title">
-          {{ movieData.Title }}
+          <h1>{{ movieData.Title }}</h1>
         </div>
         <div class="movie-info__labels">
           <span>{{ movieData.Released }}</span>
@@ -44,7 +44,7 @@
           <span>{{ movieData.Country }}</span>
         </div>
         <div class="movie-info__plot">
-          {{ movieData.Plot }}
+          <p>{{ movieData.Plot }}</p>
         </div>
         <div class="movie-info__ratings">
           <h3>Ratings</h3>
@@ -135,7 +135,10 @@ export default {
 @import "~/scss/main";
 
 $poster-width: 500px;
+$xl-poster-width: 400px;
+$md-poster-width: 320px;
 $poster-margin-right: 70px;
+$xl-poster-margin-right: 40px;
 $info-margin-top: 20px;
 $border-radius: 10px;
 
@@ -180,6 +183,39 @@ $border-radius: 10px;
       margin-top: $info-margin-top;
     }
   }
+
+  @include media-breakpoint-down(xl) {
+    .skeletons__poster {
+      width: $xl-poster-width;
+      height: $xl-poster-width * 3 / 2;
+      margin: $xl-poster-margin-right;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    display: block;
+
+    .skeletons__poster  {
+      margin: 0 auto 40px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .skeletons__poster {
+      width: $md-poster-width;
+      height: $md-poster-width * 3 / 2;
+    }
+    .skeletons__specs {
+      .skeletons__spec {
+        margin-top: $info-margin-top * 0.9;
+      }
+      .skeleton__plot {
+        height: 250px * 0.8;
+        margin-top: $info-margin-top * 0.9;
+      }
+      .skeleton__etc {
+        margin-top: $info-margin-top * 0.9;
+      }
+    }
+  }
 }
 
 .movie-info {
@@ -209,10 +245,13 @@ $border-radius: 10px;
 
     .movie-info__title {
       margin-bottom: 30px;
-      font-family: "Oswald", sans-serif;
-      font-size: 70px;
-      line-height: 1;
-      color: $black;
+
+      h1 {
+        font-family: "Oswald", sans-serif;
+        font-size: 70px;
+        line-height: 1;
+        color: $black;
+      }
     }
     .movie-info__labels {
       color: $primary;
@@ -239,10 +278,51 @@ $border-radius: 10px;
           align-items: center;
           margin-right: 32px;
 
-          img {
+          .rating__logo {
             flex-shrink: 0;
             height: 30px;
             margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    .movie-info__poster  {
+      width: $xl-poster-width;
+      height: $xl-poster-width * 3 / 2;
+      margin-right: $xl-poster-margin-right;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    display: block;
+
+    .movie-info__poster {
+      margin: 0 auto 40px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .movie-info__poster {
+      width: $md-poster-width;
+      height: $md-poster-width * 3 / 2;
+    }
+    .movie-info__specs {
+      .movie-info__title {
+        h1 {
+          font-size: 50px;
+        }
+      }
+      .movie-info__ratings {
+        .ratings__wrap {
+          display: block;
+
+          .rating {
+            margin-bottom: 10px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
           }
         }
       }

@@ -5,7 +5,7 @@
       v-model="title"
       type="text"
       placeholder="Search for Movies, Series & more"
-      class="form-control"
+      class="form-control search__input"
       @keyup.enter="apply" />
     <!-- Filters -->
     <div class="search__selects">
@@ -13,7 +13,7 @@
         v-for="filter in filters"
         v-model="$data[filter.name]"
         :key="filter.name"
-        class="form-select">
+        class="form-select search__select">
         <option
           v-if="filter.name === 'year'" 
           value="">
@@ -83,6 +83,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/scss/main";
+
 $spacing: 10px;
 $search-width: 120px;
 
@@ -110,12 +112,33 @@ $search-width: 120px;
       }
     }
   }
-
   .search__btn {
     flex-shrink: 0;
     width: $search-width;
     height: 50px;
     font-weight: 700;
+  }
+
+  @include media-breakpoint-down(lg) {
+    display: block;
+
+    .search__input {
+      height: 38px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .search__selects {
+      height: 38px;
+      margin-right: 0;
+      margin-bottom: 10px;
+
+      .search__select {
+        width: 100%;
+      }
+    }
+    .search__btn {
+      width: 100%;
+    }
   }
 }
 </style>

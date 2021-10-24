@@ -2,7 +2,7 @@
   <!-- Headline -->
   <div class="container headline">
     <h1 class="headline__title">
-      <span>OMDb API</span><br />
+      <span class="headline__title--highlight">OMDb API</span><br />
       THE OPEN<br />
       MOVIE DATABASE
     </h1>
@@ -19,19 +19,23 @@
 
 .headline {
   padding-top: 40px;
-}
 
-.headline__title {
-  font-family: "Oswald", sans-serif;
-  font-size: 80px;
-  line-height: 1;
+  .headline__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 80px;
+    line-height: 1;
 
-  span {
-    color: $primary;
+    .headline__title--highlight {
+      color: $primary;
+    }
   }
-}
-.headline__desc {
-  margin: 30px 0;
-  color: $gray-600;
+  .headline__desc {
+    margin: 30px 0;
+    color: $gray-600;
+  }
+  
+  @include media-breakpoint-down(sm) {
+    padding-top: 35px;
+  }
 }
 </style>

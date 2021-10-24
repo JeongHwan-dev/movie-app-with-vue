@@ -7,9 +7,11 @@
     <p class="not-found__message">
       Page Not Found!
     </p>
-    <a
-      href="/"
-      class="btn btn-primary not-found__btn">Back to home</a>
+    <RouterLink
+      to="/"
+      class="btn btn-primary not-found__btn">
+      Back to home
+    </RouterLink>
   </div>
   <!-- //Not Found -->
 </template>

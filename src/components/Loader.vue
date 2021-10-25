@@ -1,4 +1,5 @@
 <template>
+  <!-- Loader -->
   <div
     :style="{ 
       width: `${size}rem`, 
@@ -10,6 +11,7 @@
       fixed 
     }"
     class="spinner-border text-primary"></div>
+    <!-- //Loader -->
 </template>
 
 <script>

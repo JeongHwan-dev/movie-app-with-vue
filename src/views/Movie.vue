@@ -35,9 +35,9 @@
       <!-- //Movie Info - Poster -->
       <!-- Movie Info - Specs -->
       <div class="movie-info__specs">
-        <div class="movie-info__title">
-          <h1>{{ movieData.Title }}</h1>
-        </div>
+        <h1 class="movie-info__title">
+          {{ movieData.Title }}
+        </h1>
         <div class="movie-info__labels">
           <span>{{ movieData.Released }}</span>
           <span>{{ movieData.Runtime }}</span>
@@ -47,7 +47,9 @@
           <p>{{ movieData.Plot }}</p>
         </div>
         <div class="movie-info__ratings">
-          <h3>Ratings</h3>
+          <h2 class="movie-info__label">
+            Ratings
+          </h2>
           <div class="ratings__wrap">
             <div
               v-for="{ Source: name, Value: score } in movieData.Ratings"
@@ -63,20 +65,28 @@
           </div>
         </div>
         <div class="movie-info__actors">
-          <h3>Actors</h3>
-          <span>{{ movieData.Actors }}</span>
+          <h2 class="movie-info__label">
+            Actors
+          </h2>
+          <span class="movie-info__content">{{ movieData.Actors }}</span>
         </div>
         <div class="movie-info__director">
-          <h3>Director</h3>
-          <span>{{ movieData.Director }}</span>
+          <h2 class="movie-info__label">
+            Director
+          </h2>
+          <span class="movie-info__content">{{ movieData.Director }}</span>
         </div>
         <div class="movie-info__production">
-          <h3>Production</h3>
-          <span>{{ movieData.Production }}</span>
+          <h2 class="movie-info__label">
+            Production
+          </h2>
+          <span class="movie-info__content">{{ movieData.Production }}</span>
         </div>
         <div class="movie-info__genre">
-          <h3>Genre</h3>
-          <span>{{ movieData.Genre }}</span>
+          <h2 class="movie-info__label">
+            Genre
+          </h2>
+          <span class="movie-info__content">{{ movieData.Genre }}</span>
         </div>
       </div>
       <!-- //Movie Info - Specs -->
@@ -233,27 +243,24 @@ $border-radius: 10px;
   .movie-info__specs {
     flex-grow: 1;
 
-    h3 {
+    .movie-info__label {
       margin: 24px 0 6px;
-      color: $black;
       font-family: "Oswald", sans-serif;
       font-size: 20px;
+      color: $black;
     }
 
     .movie-info__title {
       margin-bottom: 30px;
-
-      h1 {
-        font-family: "Oswald", sans-serif;
-        font-size: 70px;
-        line-height: 1;
-        color: $black;
-      }
+      font-family: "Oswald", sans-serif;
+      font-size: 70px;
+      line-height: 1;
+      color: $black;
     }
     .movie-info__labels {
       color: $primary;
       
-      span {
+      .movie-info__content {
         &::after {
           content: "\00b7";
           margin: 0 6px;
@@ -306,9 +313,7 @@ $border-radius: 10px;
     }
     .movie-info__specs {
       .movie-info__title {
-        h1 {
-          font-size: 50px;
-        }
+        font-size: 50px;
       }
       .movie-info__ratings {
         .ratings__wrap {

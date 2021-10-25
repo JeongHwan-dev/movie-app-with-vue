@@ -1,44 +1,79 @@
 <template>
-  <div
-    :style="{backgroundImage: `url(${movie.Poster})`}"
-    class="movie">
-    <div class="info">
-      <div class="year">
+  <!-- Movie Item -->
+  <RouterLink
+    :to="`/movie/${movie.imdbID}`"
+    :style="{ backgroundImage: `url(${movie.Poster})` }"
+    class="movie-item">
+    <!-- Loader -->
+    <Loader
+      v-if="imageLoading"
+      :size="1.5"
+      absolute />
+    <!-- //Loader -->
+    <!-- Movie Item Info -->
+    <div class="movie-item__info">
+      <div class="movie-item__year">
         {{ movie.Year }}
       </div>
-      <div class="title">
+      <div class="movie-item__title">
         {{ movie.Title }}
       </div>
     </div>
-  </div>
+    <!-- //Movie Item Info -->
+  </RouterLink>
+  <!-- //Movie Item -->
 </template>
 
 <script>
+import Loader from '~/components/Loader';
+
 export default {
+  components: {
+    Loader
+  },
   props: {
     movie: {
       type: Object,
       default: () => ({})
+    }
+  },
+  data() {
+    return {
+      imageLoading: true
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    async init() {
+      const poster = this.movie.Poster;
+
+      if (!poster|| poster === 'N/A') {
+        this.imageLoading = false;
+      } else {
+        await this.$loadImage(poster);
+        this.imageLoading = false;
+      }
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-$width: 200px;
+$movie-item-width: 200px;
 
-.movie {
+.movie-item {
   overflow: hidden;
   position: relative;
-  width: $width;
-  height: $width * 3 / 2;
+  width: $movie-item-width;
+  height: $movie-item-width * 3 / 2;
   margin: 10px;
   border-radius: 4px;
   background-size: cover;
   background-color: $gray-400;
 
-  .info {
+  .movie-item__info {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -49,10 +84,10 @@ $width: 200px;
     font-size: 14px;
     text-align: center;
     
-    .year {
+    .movie-item__year {
       color: $primary;
     }
-    .title {
+    .movie-item__title {
       white-space: nowrap;
       overflow: hidden;
       color: $white;

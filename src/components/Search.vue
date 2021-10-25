@@ -1,19 +1,19 @@
 <template>
   <!-- Search -->
-  <div class="container">
+  <div class="container search">
     <input
       v-model="title"
       type="text"
       placeholder="Search for Movies, Series & more"
-      class="form-control"
+      class="form-control search__input"
       @keyup.enter="apply" />
     <!-- Filters -->
-    <div class="selects">
+    <div class="search__selects">
       <select
         v-for="filter in filters"
         v-model="$data[filter.name]"
         :key="filter.name"
-        class="form-select">
+        class="form-select search__select">
         <option
           v-if="filter.name === 'year'" 
           value="">
@@ -28,7 +28,7 @@
     </div>
     <!-- //Filters -->
     <button
-      class="btn btn-primary"
+      class="btn btn-primary search__btn"
       @click="apply">
       Apply
     </button>
@@ -86,7 +86,7 @@ export default {
 $spacing: 10px;
 $search-width: 120px;
 
-.container {
+.search {
   display: flex;
 
   > * {
@@ -98,10 +98,10 @@ $search-width: 120px;
     }
   }
 
-  .selects {
+  .search__selects {
     display: flex;
 
-    select {
+    .search__select {
       width: $search-width;
       margin-right: $spacing;
 
@@ -110,12 +110,33 @@ $search-width: 120px;
       }
     }
   }
-
-  .btn {
+  .search__btn {
     flex-shrink: 0;
     width: $search-width;
     height: 50px;
     font-weight: 700;
+  }
+
+  @include media-breakpoint-down(lg) {
+    display: block;
+
+    .search__input {
+      height: 38px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .search__selects {
+      height: 38px;
+      margin-right: 0;
+      margin-bottom: 10px;
+
+      .search__select {
+        width: 100%;
+      }
+    }
+    .search__btn {
+      width: 100%;
+    }
   }
 }
 </style>

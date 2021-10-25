@@ -35,9 +35,9 @@
       <!-- //Movie Info - Poster -->
       <!-- Movie Info - Specs -->
       <div class="movie-info__specs">
-        <div class="movie-info__title">
-          <h1>{{ movieData.Title }}</h1>
-        </div>
+        <h1 class="movie-info__title">
+          {{ movieData.Title }}
+        </h1>
         <div class="movie-info__labels">
           <span>{{ movieData.Released }}</span>
           <span>{{ movieData.Runtime }}</span>
@@ -63,19 +63,19 @@
           </div>
         </div>
         <div class="movie-info__actors">
-          <h3>Actors</h3>
+          <h2>Actors</h2>
           <span>{{ movieData.Actors }}</span>
         </div>
         <div class="movie-info__director">
-          <h3>Director</h3>
+          <h2>Director</h2>
           <span>{{ movieData.Director }}</span>
         </div>
         <div class="movie-info__production">
-          <h3>Production</h3>
+          <h2>Production</h2>
           <span>{{ movieData.Production }}</span>
         </div>
         <div class="movie-info__genre">
-          <h3>Genre</h3>
+          <h2>Genre</h2>
           <span>{{ movieData.Genre }}</span>
         </div>
       </div>
@@ -233,7 +233,7 @@ $border-radius: 10px;
   .movie-info__specs {
     flex-grow: 1;
 
-    h3 {
+    h2 {
       margin: 24px 0 6px;
       color: $black;
       font-family: "Oswald", sans-serif;
@@ -242,13 +242,10 @@ $border-radius: 10px;
 
     .movie-info__title {
       margin-bottom: 30px;
-
-      h1 {
-        font-family: "Oswald", sans-serif;
-        font-size: 70px;
-        line-height: 1;
-        color: $black;
-      }
+      font-family: "Oswald", sans-serif;
+      font-size: 70px;
+      line-height: 1;
+      color: $black;
     }
     .movie-info__labels {
       color: $primary;
@@ -306,9 +303,7 @@ $border-radius: 10px;
     }
     .movie-info__specs {
       .movie-info__title {
-        h1 {
-          font-size: 50px;
-        }
+        font-size: 50px;
       }
       .movie-info__ratings {
         .ratings__wrap {

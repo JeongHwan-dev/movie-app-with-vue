@@ -31,6 +31,7 @@ export default {
     display: block;
     margin-bottom: 4px;
   }
+
   .footer__copyright {
     color: $gray-300;
     text-decoration: none;

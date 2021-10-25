@@ -57,7 +57,7 @@
               :title="name"
               class="rating">
               <img
-                :src="require(`@/assets/images/${name}.png`)"
+                :src="`/src/images/${name}.png`"
                 :alt="name"
                 class="rating__logo" />
               <span class="rating__score">{{ score }}</span>

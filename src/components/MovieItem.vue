@@ -4,10 +4,12 @@
     :to="`/movie/${movie.imdbID}`"
     :style="{ backgroundImage: `url(${movie.Poster})` }"
     class="movie-item">
+    <!-- Loader -->
     <Loader
       v-if="imageLoading"
       :size="1.5"
       absolute />
+    <!-- //Loader -->
     <!-- Movie Item Info -->
     <div class="movie-item__info">
       <div class="movie-item__year">
@@ -59,13 +61,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$width: 200px;
+$movie-item-width: 200px;
 
 .movie-item {
   overflow: hidden;
   position: relative;
-  width: $width;
-  height: $width * 3 / 2;
+  width: $movie-item-width;
+  height: $movie-item-width * 3 / 2;
   margin: 10px;
   border-radius: 4px;
   background-size: cover;

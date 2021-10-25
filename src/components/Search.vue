@@ -101,7 +101,7 @@ $search-width: 120px;
   .search__selects {
     display: flex;
 
-    select {
+    .search__select {
       width: $search-width;
       margin-right: $spacing;
 

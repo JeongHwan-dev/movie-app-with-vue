@@ -1,11 +1,13 @@
 <template>
-  <footer>
+  <!-- Footer -->
+  <footer id="footer">
     <Logo />
     <a
       href="https://github.com/JeongHwan-dev"
       target="_blank"
       class="footer__copyright">(c) {{ new Date().getFullYear() }} Park Jeong-hwan.dev</a>
   </footer>
+  <!-- //Footer -->
 </template>
 
 <script>
@@ -19,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-footer {
+#footer {
   margin-top: 100px;
   padding: 60px 0;
   background-color: $gray-800;

@@ -47,7 +47,9 @@
           <p>{{ movieData.Plot }}</p>
         </div>
         <div class="movie-info__ratings">
-          <h3>Ratings</h3>
+          <h2 class="movie-info__label">
+            Ratings
+          </h2>
           <div class="ratings__wrap">
             <div
               v-for="{ Source: name, Value: score } in movieData.Ratings"
@@ -63,20 +65,28 @@
           </div>
         </div>
         <div class="movie-info__actors">
-          <h2>Actors</h2>
-          <span>{{ movieData.Actors }}</span>
+          <h2 class="movie-info__label">
+            Actors
+          </h2>
+          <span class="movie-info__content">{{ movieData.Actors }}</span>
         </div>
         <div class="movie-info__director">
-          <h2>Director</h2>
-          <span>{{ movieData.Director }}</span>
+          <h2 class="movie-info__label">
+            Director
+          </h2>
+          <span class="movie-info__content">{{ movieData.Director }}</span>
         </div>
         <div class="movie-info__production">
-          <h2>Production</h2>
-          <span>{{ movieData.Production }}</span>
+          <h2 class="movie-info__label">
+            Production
+          </h2>
+          <span class="movie-info__content">{{ movieData.Production }}</span>
         </div>
         <div class="movie-info__genre">
-          <h2>Genre</h2>
-          <span>{{ movieData.Genre }}</span>
+          <h2 class="movie-info__label">
+            Genre
+          </h2>
+          <span class="movie-info__content">{{ movieData.Genre }}</span>
         </div>
       </div>
       <!-- //Movie Info - Specs -->
@@ -233,11 +243,11 @@ $border-radius: 10px;
   .movie-info__specs {
     flex-grow: 1;
 
-    h2 {
+    .movie-info__label {
       margin: 24px 0 6px;
-      color: $black;
       font-family: "Oswald", sans-serif;
       font-size: 20px;
+      color: $black;
     }
 
     .movie-info__title {
@@ -250,7 +260,7 @@ $border-radius: 10px;
     .movie-info__labels {
       color: $primary;
       
-      span {
+      .movie-info__content {
         &::after {
           content: "\00b7";
           margin: 0 6px;

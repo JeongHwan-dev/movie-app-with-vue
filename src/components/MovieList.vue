@@ -1,4 +1,5 @@
 <template>
+  <!-- Movie list -->
   <div class="container movie-list">
     <div
       :class="{ 'no-result': !movies.length }"
@@ -19,6 +20,7 @@
       </div>
     </div>
   </div>
+  <!-- //Movie list -->
 </template>
 
 <script>

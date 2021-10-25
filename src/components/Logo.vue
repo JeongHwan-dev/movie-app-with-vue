@@ -1,9 +1,11 @@
 <template>
+  <!-- Logo -->
   <RouterLink
     to="/"
     class="logo">
-    <span>OMDbAPI</span>.COM
+    <span class="logo--highlight">OMDbAPI</span>.COM
   </RouterLink>
+  <!-- //Logo -->
 </template>
 
 <style lang="scss" scoped>
@@ -13,7 +15,7 @@
   font-size: 20px;
   text-decoration: none; 
 
-  span {
+  .logo--highlight {
     color: $primary;
   }
 

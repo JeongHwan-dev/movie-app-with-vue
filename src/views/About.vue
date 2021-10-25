@@ -26,11 +26,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Loader from '~/components/Loader';
 
 export default {
   components: {
-      Loader
+    Loader
   },
   data() {
     return {
@@ -38,18 +39,12 @@ export default {
     };
   },
   computed: {
-    image() {
-      return this.$store.state.about.image;
-    },
-    name() {
-      return this.$store.state.about.name;
-    },
-    email() {
-      return this.$store.state.about.email;
-    },
-    github() {
-      return this.$store.state.about.github;
-    }
+    ...mapState('about', [
+      'image', 
+      'name',
+      'email', 
+      'github'
+    ])
   },
   mounted() {
     this.init();
@@ -64,8 +59,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 .about {
   padding: 80px 0;
   text-align: center;

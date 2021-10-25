@@ -15,8 +15,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 .headline {
   padding-top: 40px;
 

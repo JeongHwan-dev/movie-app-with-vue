@@ -59,8 +59,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 $width: 200px;
 
 .movie-item {

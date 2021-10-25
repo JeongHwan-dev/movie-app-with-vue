@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Loader from '~/components/Loader';
 
 export default {
@@ -99,12 +100,10 @@ export default {
     };
   },
   computed: {
-    movieData() {
-      return this.$store.state.movie.movieData;
-    },
-    loading() {
-      return this.$store.state.movie.loading;
-    }
+    ...mapState('movie', [
+      'movieData',
+      'loading'
+    ])
   },
   created() {
     this.$store.dispatch('movie/searchMovieWithId', {
@@ -132,8 +131,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 $poster-width: 500px;
 $xl-poster-width: 400px;
 $md-poster-width: 320px;

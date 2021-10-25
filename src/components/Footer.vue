@@ -19,8 +19,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
 footer {
   margin-top: 100px;
   padding: 60px 0;

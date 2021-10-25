@@ -47,6 +47,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "axios": "^0.23.0",
     "bootstrap": "^5.0.0-beta3",
+    "dotenv-webpack": "^7.0.3",
     "lodash": "^4.17.21",
     "vue": "^3.2.20",
     "vue-router": "^4.0.11",

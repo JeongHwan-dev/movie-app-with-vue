@@ -1,6 +1,8 @@
 <template>
   <!-- Header -->
-  <header id="header">
+  <header
+    :class="{'header--scrolled': scrollPosition > 0}"
+    id="header">
     <div class="header__inner">
       <!-- Logo -->
       <Logo />
@@ -80,7 +82,8 @@ export default {
           href: '/about'
         }
       ],
-      navBarStatus: false
+      navBarStatus: false,
+      scrollPosition: null
     };
   },
   methods: {
@@ -89,7 +92,13 @@ export default {
     },
     onClickNavBarBtn() {
       this.navBarStatus = !this.navBarStatus;
+    },
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
   }
 };
 </script>
@@ -106,7 +115,7 @@ export default {
   .header__inner {
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 60px;
     padding: 0 40px;
 
     .logo {
@@ -118,7 +127,7 @@ export default {
       align-items: center;
       border: none;
       background-color: transparent;
-      font-size: 26px;
+      font-size: 24px;
       color: $primary;
     }
   }
@@ -126,11 +135,15 @@ export default {
   .nav-bar {
     display: none;
     overflow-y: hidden;
-    opacity: 0.9;
     max-height: 0;
     transition: .3s ease;
 
+    &.nav-bar--expanded {
+      max-height: 100vh;
+    }
+
     .nav-bar__items {
+      margin-bottom: 0;
       padding: 0;
 
       .nav-bar__item {
@@ -138,23 +151,42 @@ export default {
         background-color: $primary;
         transition: .15s;
 
+        &:hover {
+          background-color: #fdcc33;
+        }
+
         .nav-bar__item-link {
           display: block;
-          opacity: 1;
           padding: 18px 20px;
           font-size: 18px;
           color: $white;
           text-decoration: none;
         }
 
-        &:hover {
-          opacity: 0.8;
+      }
+    }
+  }
+
+  &.header--scrolled {
+    background-color: $primary;
+
+    .header__inner {
+      .nav {
+        .nav-item {
+          .nav-link {
+            color: $white;
+
+            &.active {
+              background-color: $white;
+              color: $primary;
+            }
+          }
         }
       }
     }
 
-    &.nav-bar--expanded {
-      max-height: 100vh;
+    .nav-bar-btn {
+      color: $white;
     }
   }
 
@@ -173,6 +205,14 @@ export default {
     }
     .nav-bar {
       display: block;
+
+      .nav-bar__items {
+        .nav-bar__item {
+          .nav-bar__item-link {
+            font-size: 15px;
+          }
+        }
+      }
     }
   }
 }

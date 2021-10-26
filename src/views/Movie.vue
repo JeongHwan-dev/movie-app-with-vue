@@ -150,7 +150,7 @@ $info-margin-top: 20px;
 $border-radius: 10px;
 
 .container {
-  padding-top: 110px;
+  padding-top: 100px;
 
   .skeletons {
     display: flex;
@@ -332,7 +332,7 @@ $border-radius: 10px;
   }
 
   @include media-breakpoint-down(sm) {
-    padding-top: 105px;
+    padding-top: 95px;
   }
 }
 </style>

@@ -90,8 +90,8 @@ $movie-item-width: 200px;
     .movie-item__title {
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
       color: $white;
+      text-overflow: ellipsis;
     }
   }
 

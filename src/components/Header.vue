@@ -97,6 +97,12 @@ export default {
 <style lang="scss" scoped>
 
 #header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+
   .header__inner {
     display: flex;
     align-items: center;
@@ -154,7 +160,7 @@ export default {
 
   @include media-breakpoint-down(sm) {
     .header__inner {
-      padding: 0 22px;
+      padding: 0 20px;
       justify-content: space-between;
 
       .nav {
@@ -162,6 +168,7 @@ export default {
       }
       .nav-bar-btn {
         display: flex;
+        padding: 0;
       }
     }
     .nav-bar {

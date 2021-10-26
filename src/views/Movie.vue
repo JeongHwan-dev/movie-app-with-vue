@@ -316,13 +316,27 @@ $border-radius: 10px;
         }
         .movie-info__ratings {
           .ratings__wrap {
-            display: block;
-
             .rating {
               margin-bottom: 10px;
 
               &:last-child {
                 margin-bottom: 0;
+              }
+
+            }
+          }
+        }
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      .movie-info__specs {
+        .movie-info__ratings {
+          .ratings__wrap {
+            .rating {
+              margin-right: 10px;
+
+              .rating__logo {
+                margin-right: 4px;
               }
             }
           }

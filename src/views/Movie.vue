@@ -275,6 +275,7 @@ $border-radius: 10px;
       .movie-info__ratings {
         .ratings__wrap {
           display: flex;
+          flex-wrap: wrap;
 
           .rating {
             display: flex;

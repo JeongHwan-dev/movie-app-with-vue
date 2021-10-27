@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  padding: 80px 0;
+  padding: 145px 0 85px;
   text-align: center;
   
   .about__photo {

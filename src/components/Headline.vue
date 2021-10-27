@@ -16,7 +16,7 @@
 
 <style lang="scss" scoped>
 .headline {
-  padding-top: 40px;
+  padding-top: 100px;
 
   .headline__title {
     font-family: "Oswald", sans-serif;
@@ -33,7 +33,7 @@
   }
   
   @include media-breakpoint-down(sm) {
-    padding-top: 35px;
+    padding-top: 95px;
   }
 }
 </style>

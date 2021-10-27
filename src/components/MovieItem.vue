@@ -73,6 +73,16 @@ $movie-item-width: 200px;
   background-size: cover;
   background-color: $gray-400;
 
+  &:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 6px solid $primary;
+  }
+
   .movie-item__info {
     position: absolute;
     left: 0;
@@ -93,16 +103,6 @@ $movie-item-width: 200px;
       color: $white;
       text-overflow: ellipsis;
     }
-  }
-
-  &:hover::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border: 6px solid $primary;
   }
 }
 </style>

@@ -282,6 +282,10 @@ $border-radius: 10px;
             align-items: center;
             margin-right: 32px;
 
+            &:last-child {
+              margin-right: 0;
+            }
+
             .rating__logo {
               flex-shrink: 0;
               height: 30px;
@@ -319,11 +323,6 @@ $border-radius: 10px;
           .ratings__wrap {
             .rating {
               margin-bottom: 10px;
-
-              &:last-child {
-                margin-bottom: 0;
-              }
-
             }
           }
         }

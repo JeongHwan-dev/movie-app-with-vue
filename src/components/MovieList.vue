@@ -54,7 +54,7 @@ export default {
     text-align: center;
 
     &.no-result {
-      padding: 70px 0;
+      padding: 110px 0;
     }
   }
 

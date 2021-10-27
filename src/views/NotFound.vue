@@ -18,7 +18,7 @@
 
 <style lang="scss" scoped>
 .not-found {
-  padding: 100px 0;
+  padding: 125px 0;
   font-family: "Oswald", sans-serif;
   line-height: 1.2;
   text-align: center;

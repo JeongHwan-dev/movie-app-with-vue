@@ -3,14 +3,18 @@
   <img src="./readme_assets/omdb_title.png" alt="OMDb.com" height="200px" />
   <br />
   <h1>OMDbAPI.COM (영화 소개 서비스)</h1>
+  <a href="https://app.netlify.com/sites/adoring-varahamihira-59ab90/deploys" target="_blank">
+    <img src="https://api.netlify.com/api/v1/badges/b8db031f-7e89-4e46-ac7a-7f24b991ac8d/deploy-status" alt="Netlify status" />
+  </a>
   <br />
 </div>
+
 
 ## 목차
 
 1. [**웹 서비스 소개**](#1)
 2. [**기술 스택**](#2)
-3. [**주요 페이지**](#3)
+3. [**데모 영상**](#3)
 4. [**실행 방법**](#4)
 
 <br />
@@ -33,31 +37,50 @@
 
 ## 🛠 기술 스택
 
-**Front-end**
 
-  ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?&style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?&style=flat-square&logo=css3&logoColor=white) ![Sass](https://img.shields.io/badge/-Sass-CC6699?&style=flat-square&logo=sass&logoColor=white)   
-  ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?&style=flat-square&logo=javascript&logoColor=white)  
-  ![Vue.js](https://img.shields.io/badge/-Vue_js-4FC08D?&style=flat-square&logo=Vue.js&logoColor=white)  
-  ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?&style=flat-square&logo=bootstrap&logoColor=white)   
-  ![Webpack](https://img.shields.io/badge/-Webpack-8DD6F9?&style=flat-square&logo=webpack&logoColor=white)    
+### **Front-end**
 
-**DevOps**
+| <img src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" width="50px" height="50px" /> | <img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" width="50px" height="50px" /> | <img src="https://profilinator.rishav.dev/skills-assets/sass-original.svg" alt="Sass(SCSS)" width="50px" height="50px" /> | <img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" width="50px" height="50px" /> |
+| :----------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
+|                                                             HTML5                                                              |                                                             CSS3                                                             |     Sass(SCSS)                                                             |                                                    JavaScript(ES6)                                                         |
 
-  ![Netlify](https://img.shields.io/badge/-Netlify-00C7B7?&style=flat-square&logo=netlify&logoColor=white)
+| <img src="https://profilinator.rishav.dev/skills-assets/vuejs-original-wordmark.svg" alt="Vue.js" width="50px" height="50px" /> | <img src="https://yamoo9.github.io/vuex/images/vuex.png" alt="Vuex" width="50px" height="50px" /> | <img src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" width="50px" height="50px" /> |
+| :-----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |  :-----------------------------------------------------------------------------------------------: |
+|                                                             Vue.js                                                              |                                               Vuex                                                | Bootstrap                                                |
 
-**Version Control**
+| <img src="https://profilinator.rishav.dev/skills-assets/webpack-original.svg" alt="Webpack" width="50px" height="50px" /> |
+| :---------------------------------------------------------------------------------------------------------------------------: |
+|                                                            Webpack                                                            |
 
-  ![Git](https://img.shields.io/badge/-Git-F05032?&style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/-GitHub-181717?&style=flat-square&logo=github&logoColor=white)
+### **DevOps**
+
+| <img src="https://seeklogo.com/images/N/netlify-logo-758722CDF4-seeklogo.com.png" alt="Netlify" width="50px" height="50px" /> |
+| :---------------------------------------------------------------------------------------------------------------------------: |
+|                                                            Netlify                                                            |
+
+### **Version Control**
+
+| <img src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" width="50px" height="50px" /> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" alt="GitHub" width="50px" height="50px" /> |
+| :---------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+|                                                        Git                                                        |                                                         GitHub                                                         |
 
 <br />
 
 <div id='3'></div>
 
-## 📄 주요 페이지
+## 🎥 데모 영상
 
-| 메인 페이지 |
-| :---------: |
-|      -      |
+|                    메인 페이지(영화 검색)                    |
+| :-----------------------------------------------: |
+| <img src="./readme_assets/demo_search.gif" alt="Demo Search" /> |
+
+|                    About 페이지                    |
+| :-----------------------------------------------: |
+| <img src="./readme_assets/demo_about.gif" alt="Demo About" /> |
+
+|                                      메인 페이지(모바일 / 영화 검색)                                       |                                    네비게이션을 이용한 페이지 이동(모바일)                                    |
+| :--------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
+| <img src="./readme_assets/demo-mobile_search.gif" alt="매칭 페이지(모바일)" width="400px" /> | <img src="./readme_assets/demo-mobile_nav.gif" alt="FAQ 페이지(모바일)" width="400px" /> |
 
 <br />
 
